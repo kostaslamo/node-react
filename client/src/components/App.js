@@ -1,10 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Page404 from './Page404';
 
 import './css/App.css';
 import 'semantic-ui-css/semantic.min.css';
 
 const App = () => {
-  return <div className="App">Hello from React App!</div>;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <div className="App">Hello from React App!</div>
+        </Route>
+        <Route path="*">
+          <Page404></Page404>
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 export default App;
