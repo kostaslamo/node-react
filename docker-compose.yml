@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: nodereact/frontend
     ports:
-      - '3000:80'
+      - '4000:80'
   backend:
     container_name: node-backend
     build:
