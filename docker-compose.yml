@@ -1,0 +1,18 @@
+version: '3'
+services:
+  frontend:
+    container_name: react-frontend
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: nodereact/frontend
+    ports:
+      - '3000:80'
+  backend:
+    container_name: node-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: nodereact/backend
+    ports:
+      - '8080:8080'
