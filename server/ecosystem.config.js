@@ -7,10 +7,6 @@ module.exports = {
       instances: 1,
       autorestart: true,
       watch: false,
-      env: {
-        PORT: 8080,
-        NODE_ENV: 'production',
-      },
     },
   ],
 };

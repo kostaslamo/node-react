@@ -8,6 +8,8 @@ services:
     image: nodereact/server
     ports:
       - "8080:8080"
+    env_file:
+      - server-prod-variables.env
   client:
     container_name: client
     build:
