@@ -1,13 +1,13 @@
-version: '3'
+version: "3"
 services:
   server:
     container_name: server
     build:
-      context: ./
+      context: ./server
       dockerfile: Dockerfile
     image: nodereact/server
     ports:
-      - '8080:8080'
+      - "8080:8080"
   client:
     container_name: client
     build:
@@ -15,9 +15,4 @@ services:
       dockerfile: Dockerfile
     image: nodereact/client
     ports:
-      - '4000:80'
-    links:
-      - server
-    environment:
-      - 'API_HOST: localhost'
-      - 'API_SERVER_PORT: 8080'
+      - "4000:80"
