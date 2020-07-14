@@ -15,4 +15,4 @@ services:
       dockerfile: Dockerfile
     image: nodereact/client
     ports:
-      - "4000:80"
+      - "5000:80"
