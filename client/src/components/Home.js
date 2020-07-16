@@ -13,7 +13,7 @@ const Home = () => {
       <Button
         onClick={() => {
           axios
-            .get(`${apiUrl}/checkHealth`)
+            .get(`${apiUrl}/api/checkHealth`)
             .then((res) => {
               setApiStatus(res.data.msg);
             })

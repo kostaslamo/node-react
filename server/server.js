@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const { port, allowedOrigins } = require('./config/keys');
+const api = require('./routes/api');
 
 global.logger = require('./config/logger');
 
@@ -30,8 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/checkHealth', (req, res) => {
-  res.json({ msg: 'ok' });
-});
+// Routes
+app.use('/api', api);
 
 app.listen(port, () => global.logger.info(`Server up and running in ${process.env.NODE_ENV === 'production' ? 'production' : 'development'} mode, on port ${port} !`));
