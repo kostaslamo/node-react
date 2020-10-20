@@ -11,16 +11,22 @@
 
 ### Local development
 
-- `npm install` inside server and client directories.
-- To start the application, if in Mac OS or Linux execute `bash runServerClientDev.sh`. Alternatively run `npm run start-dev` inside server directory to start up the server and `npm start` inside client, to start up the client in development mode.
+- `npm ci` inside projects directory.
+- Run `npm run develop` inside projects directory to start up the backend and react server in development mode.
+- Create a copy of the "sample.env" and name it ".env".
+  #### macOS / Linux
+  `cp sample.env .env`
+  #### Windows
+  `copy sample.env .env`
 - Client uses `create-react-app` server with hot reload on changes and server uses `nodemon` for server reloading on code changing.
-- Create `.env` files and pass environment variables in both server and client ([React's custom environment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)).
 
 ### Production built
+
 - Running `docker-compose up --build` will build the client and server docker images, and then run them inside a container.
 - `docker-compose.yml` requires the `server-prod-variables.env` environment variables file which should be created before running `docker-compose up`.
 
 A simple template of that file could be:
+
 ```
 NODE_ENV=production
 PORT=8080
