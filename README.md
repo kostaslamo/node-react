@@ -13,21 +13,16 @@
 
 - `npm ci` inside projects directory.
 - Run `npm run develop` inside projects directory to start up the backend and react server in development mode.
-- Create a copy of the "sample.env" and name it ".env".
-  #### macOS / Linux
-  `cp sample.env .env`
-  #### Windows
-  `copy sample.env .env`
 - Client uses `create-react-app` server with hot reload on changes and server uses `nodemon` for server reloading on code changing.
 
 ### Production built
 
-- Running `docker-compose up --build` will build the client and server docker images, and then run them inside a container.
-- `docker-compose.yml` requires the `server-prod-variables.env` environment variables file which should be created before running `docker-compose up`.
+- Create `server-prod-variables.env` environment variables file which should be created before running `docker-compose up` and is required by `docker-compose.yml`
+  `server-prod-variables.env`:
 
-A simple template of that file could be:
+  ```
+  NODE_ENV=production
+  PORT=8080
+  ```
 
-```
-NODE_ENV=production
-PORT=8080
-```
+- Running `docker-compose up --build --detach` will build the client and server docker images, and then run them inside two different containers and under one container stack.
