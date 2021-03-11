@@ -7,7 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && npm run develop",
-    "develop:server": "cd ./server && npm run develop"
+    "develop:server": "cd ./server && npm run develop",
+    "install": "npm-run-all -p install:*",
+    "install:client": "cd ./client && npm install",
+    "install:server": "cd ./server && npm install",
+    "update-packages": "npm-run-all -p update-packages:*",
+    "update-packages:client": "cd ./client && npm update",
+    "update-packages:server": "cd ./server && npm update"
   },
   "repository": {
     "type": "git",
